@@ -4,9 +4,9 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Nav = () => {
   const categories = [
-    { text: 'All flowers', url: '/' },
-    { text: 'Home flowers', url: '/category/garden' },
-    { text: 'Garden flowers', url: '/category/home' },
+    { text: 'All posts', url: '/' },
+    { text: 'Posts firstCat', url: '/category/firstCat' },
+    { text: 'Posts secondCat', url: '/category/secondCat' },
   ].map((item) => ({ ...item, id: uuidv4() }));
 
   const activeClass = 'active--category';
