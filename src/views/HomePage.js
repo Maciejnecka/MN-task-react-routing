@@ -11,11 +11,13 @@ import PostsByCategory from '../components/PostSorting/PostsByCategory';
 import PostsByDate from '../components/PostSorting/PostsByDate';
 import Footer from '../components/Footer';
 import NotFound from './NotFound';
+import DatesList from '../components/PostSorting/DatesList';
 
 const HomePage = () => {
   return (
     <PrismicProvider client={client}>
       <Header />
+      <DatesList posts={posts} />
       <Routes>
         <Route path="/" element={<PaginatedPosts postsList={posts} />} />
 

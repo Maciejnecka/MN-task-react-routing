@@ -1,11 +1,9 @@
-body {
+html {
   background-color: #999;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   min-height: 100vh;
 }
 
@@ -84,6 +82,9 @@ body {
   text-align: center;
   padding: 1rem 0;
   font-style: italic;
+  position: absolute;
+  bottom: -10%;
+  width: 100%;
 }
 
 .footer::before {
