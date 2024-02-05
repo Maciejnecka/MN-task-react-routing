@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import Posts from './Posts';
+import Posts from '../Posts';
 
 const PostsByDate = ({ postsList }) => {
   const { year, month } = useParams();

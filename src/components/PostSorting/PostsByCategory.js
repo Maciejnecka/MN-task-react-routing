@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Posts from './Posts';
-import Pagination from './Pagination';
+import Posts from '../Posts';
+import Pagination from '../Pagination/Pagination';
 import { useParams } from 'react-router-dom';
 
 const PostsByCategory = ({ postsList, postsPerPage = 3 }) => {

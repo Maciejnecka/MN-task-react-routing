@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Posts from './Posts';
+import Posts from '../Posts';
 import Pagination from './Pagination';
 
 const PaginatedPosts = ({ postsList, postsPerPage = 3 }) => {

@@ -6,9 +6,9 @@ import Posts from '../components/Posts';
 import { posts } from '../data/posts';
 import { PrismicProvider } from '@prismicio/react';
 import { client } from '../providers/prismic';
-import PaginatedPosts from '../components/PaginatedPosts';
-import PostsByCategory from '../components/PostsByCategory';
-import PostsByDate from '../components/PostsByDate';
+import PaginatedPosts from '../components/Pagination/PaginatedPosts';
+import PostsByCategory from '../components/PostSorting/PostsByCategory';
+import PostsByDate from '../components/PostSorting/PostsByDate';
 import Footer from '../components/Footer';
 import NotFound from './NotFound';
 
