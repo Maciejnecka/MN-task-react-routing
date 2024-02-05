@@ -1,11 +1,13 @@
 // views/HomePage.js
+// import React, { useEffect, useState } from 'react';
 import React from 'react';
 import Header from '../components/Header';
 import { Route, Routes } from 'react-router-dom';
 import Posts from '../components/Posts';
-import { posts } from '../data/posts';
 import { PrismicProvider } from '@prismicio/react';
 import { client } from '../providers/prismic';
+import { posts } from '../data/posts';
+// import { predicate } from '@prismicio/client'; //
 import PaginatedPosts from '../components/Pagination/PaginatedPosts';
 import PostsByCategory from '../components/PostSorting/PostsByCategory';
 import PostsByDate from '../components/PostSorting/PostsByDate';
@@ -15,6 +17,20 @@ import DatesList from '../components/PostSorting/DatesList';
 import PostDetail from '../components/PostDetail';
 
 const HomePage = () => {
+  // const [posts, setPosts] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     const response = await client.get({
+  //       predicates: [predicate.at('document.type', 'posts')],
+  //       options: { pageSize: 100 },
+  //     });
+  //     setPosts(response.results);
+  //   };
+
+  //   fetchPosts();
+  // }, []);
+
   return (
     <PrismicProvider client={client}>
       <Header />
