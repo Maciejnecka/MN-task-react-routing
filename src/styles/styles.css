@@ -1,5 +1,5 @@
 html {
-  background-color: #999;
+  background-color: #e6e6e6;
 }
 
 #root {
@@ -15,7 +15,52 @@ html {
   align-items: center;
   margin-bottom: 3rem;
   background-color: #f5f5f5;
-  padding: 2rem 0;
+}
+.header__img-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header__img-box::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(185, 201, 244, 0.5) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+.header__img {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  object-position: top;
+}
+
+.header__img-description {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 3rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  z-index: 2;
 }
 
 .header__title {
@@ -80,7 +125,6 @@ html {
 }
 
 .post__item:hover {
-  cursor: pointer;
   background-color: #f1f4fd;
   scale: 1.05;
 }
@@ -154,6 +198,59 @@ html {
   font-size: 1.5rem;
 }
 
+.post-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f8fafe;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.post-detail__title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.post-detail__intro {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.post-detail__text {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.post-detail--go-back-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.post-detail--go-back-button:hover,
+.post-detail--go-back-button:focus {
+  background-color: #0056b3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
 .pagination {
   display: flex;
   align-items: center;
@@ -172,6 +269,14 @@ html {
   background-color: #fff;
   border: 1px solid #dee2e6;
   border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.page-item .page-link:hover {
+  color: #fff;
+  background-color: #b9c9f4;
+  border-color: #b9c9f4;
 }
 
 .page-item.active .page-link {

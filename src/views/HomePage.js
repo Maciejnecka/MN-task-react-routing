@@ -12,6 +12,7 @@ import PostsByDate from '../components/PostSorting/PostsByDate';
 import Footer from '../components/Footer';
 import NotFound from './NotFound';
 import DatesList from '../components/PostSorting/DatesList';
+import PostDetail from '../components/PostDetail';
 
 const HomePage = () => {
   return (
@@ -26,6 +27,7 @@ const HomePage = () => {
           path="/category/:category"
           element={<PostsByCategory postsList={posts} />}
         />
+        <Route path="/category/:category/:title" element={<PostDetail />} />
         <Route
           path="/date/:year/:month"
           element={<PostsByDate postsList={posts} />}
