@@ -1,3 +1,4 @@
+// components / PostsByCategory.js
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import Posts from './Posts';
