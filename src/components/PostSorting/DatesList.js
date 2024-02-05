@@ -5,7 +5,6 @@ const DatesList = ({ posts }) => {
   const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState('');
 
-  // Map posts to year/month strings
   const dates = posts.map((post) => {
     const date = new Date(post.date);
     return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(
@@ -14,7 +13,6 @@ const DatesList = ({ posts }) => {
     )}`;
   });
 
-  // Create a Set to remove duplicates, then convert back to array and sort
   const uniqueSortedDates = [...new Set(dates)].sort((a, b) =>
     b.localeCompare(a)
   );
@@ -31,17 +29,26 @@ const DatesList = ({ posts }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="date-select">Sort by date:</label>
-      <select id="date-select" value={selectedDate} onChange={handleDateChange}>
+    <form className="date-selector" onSubmit={handleSubmit}>
+      <label htmlFor="date-select" className="date-selector__label">
+        Sort by date:
+      </label>
+      <select
+        id="date-select"
+        className="date-selector__select"
+        value={selectedDate}
+        onChange={handleDateChange}
+      >
         <option value="">Select Date</option>
         {uniqueSortedDates.map((date) => (
-          <option key={date} value={date}>
+          <option key={date} className="date-selector__option" value={date}>
             {date}
           </option>
         ))}
       </select>
-      <button type="submit">Go</button>
+      <button type="submit" className="date-selector__button">
+        Go
+      </button>
     </form>
   );
 };
