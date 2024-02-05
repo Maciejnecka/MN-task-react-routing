@@ -1,22 +1,38 @@
-// components / PostsByCategory.js
-import React from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import Posts from './Posts';
+import Pagination from './Pagination';
+import { useParams } from 'react-router-dom';
 
-const PostsByCategory = ({ postsList }) => {
+const PostsByCategory = ({ postsList, postsPerPage = 3 }) => {
   const { category } = useParams();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
-  let filteredPosts = postsList.filter((post) => post.category === category);
+  useEffect(() => {
+    const postsByCategory = postsList.filter(
+      (post) => post.category === category
+    );
+    setFilteredPosts(postsByCategory);
+    setCurrentPage(1);
+  }, [category, postsList]);
 
-  if (filteredPosts.length === 0) {
-    return <Navigate to="/not-found" />;
-  }
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-  filteredPosts = postsList.filter((item) => {
-    return item.category.toLowerCase() === category.toLowerCase();
-  });
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  return <Posts postsList={filteredPosts} />;
+  return (
+    <>
+      <Posts postsList={currentPosts} />
+      <Pagination
+        postsPerPage={postsPerPage}
+        totalPosts={filteredPosts.length}
+        currentPage={currentPage}
+        paginate={paginate}
+      />
+    </>
+  );
 };
 
 export default PostsByCategory;
