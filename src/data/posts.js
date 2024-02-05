@@ -98,4 +98,13 @@ export const posts = [
     category: 'firstCat',
     date: '2022-05-06',
   },
+  {
+    id: 12,
+    title: 'Lorem ipsum title 12',
+    intro:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse id feugiat enim, in pellentesque odio. Aenean blandit vel eros non bibendum.',
+    text: 'In imperdiet id ante at varius. Integer ac nulla non quam euismod scelerisque. Ut non turpis quis tellus tristique consectetur. Etiam maximus risus non diam imperdiet, eget rutrum ipsum euismod. Quisque id vehicula odio. Vivamus ultricies sem libero. Nam bibendum nulla purus, at efficitur libero rhoncus ut.',
+    category: 'secondCat',
+    date: '2020-10-06',
+  },
 ];
